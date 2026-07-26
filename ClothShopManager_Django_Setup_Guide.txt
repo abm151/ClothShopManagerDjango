@@ -1,0 +1,48 @@
+ClothShopManager (Python + Django) Setup Guide
+
+Completed
+
+1.  Verified Python: python3 –version
+
+2.  Verified pip: pip3 –version
+
+3.  Installed Django: pip3 install django
+
+4.  Created Django project: cd Documents django-admin startproject
+    ClothShopManagerDjango
+
+5.  Enter project: cd ClothShopManagerDjango
+
+6.  Start server: python3 manage.py runserver
+
+7.  Open browser: http://127.0.0.1:8000/
+
+Current Project Structure
+
+ClothShopManagerDjango/ │ ├── manage.py └── ClothShopManagerDjango/ ├──
+settings.py ├── urls.py ├── asgi.py └── wsgi.py
+
+Roadmap
+
+Phase 1 - Create Products app - Product model - SQLite database -
+Add/Edit/Delete products
+
+Phase 2 - Inventory management - Categories - Stock updates
+
+Phase 3 - Sales system - Automatic stock reduction - Daily sales reports
+
+Phase 4 - Employee login - Roles (Admin / Worker)
+
+Phase 5 - Dashboard - Today’s sales - Low stock alerts - Reports
+
+How we will work
+
+-   One small lesson at a time.
+-   I explain first.
+-   Then you write a little code.
+-   We test it before moving on.
+-   No rushing.
+
+Next Lesson
+
+Create the first Django app: python3 manage.py startapp products
