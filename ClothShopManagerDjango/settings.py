@@ -31,14 +31,16 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-   
-    'inventory', # This app is part of my project. Please load it.
+
+    'inventory',
 ]
 
 MIDDLEWARE = [
@@ -119,3 +121,19 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+JAZZMIN_SETTINGS = {
+    "site_title": "Cloth Shop Manager",
+    "site_header": "Cloth Shop Manager",
+    "site_brand": "Cloth Shop Manager",
+    "welcome_sign": "Welcome to Clothing Management System",
+
+    "show_sidebar": True,
+
+    "navigation_expanded": True,
+
+    "icons": {
+        "inventory.product": "fas fa-tshirt",
+        "inventory.category": "fas fa-layer-group",
+        "inventory.brand": "fas fa-tags",
+    },
+}
