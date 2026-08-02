@@ -1,47 +1,45 @@
-
 {% extends "dashboard/base.html" %}
 
 {% block content %}
 
-<div class="container-fluid">
+<div class="container-fluid px-2">
 
-    <h2 class="mb-4 px-2">
+    <h2 class="mb-3">
         Dashboard
     </h2>
 
 
     <!-- Dashboard Cards -->
-    <div class="row g-3">
+    <div class="row g-2">
 
-
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="card p-3 shadow-sm h-100">
-                <h6>Total Products</h6>
-                <h2>{{ total_products }}</h2>
+        <div class="col-6">
+            <div class="card p-3 shadow-sm">
+                <h6 class="small">Total Products</h6>
+                <h2 class="mb-0">{{ total_products }}</h2>
             </div>
         </div>
 
 
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="card p-3 shadow-sm h-100">
-                <h6>Total Brands</h6>
-                <h2>{{ total_brands }}</h2>
+        <div class="col-6">
+            <div class="card p-3 shadow-sm">
+                <h6 class="small">Total Brands</h6>
+                <h2 class="mb-0">{{ total_brands }}</h2>
             </div>
         </div>
 
 
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="card p-3 shadow-sm h-100">
-                <h6>Total Categories</h6>
-                <h2>{{ total_categories }}</h2>
+        <div class="col-6">
+            <div class="card p-3 shadow-sm">
+                <h6 class="small">Categories</h6>
+                <h2 class="mb-0">{{ total_categories }}</h2>
             </div>
         </div>
 
 
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="card p-3 shadow-sm h-100">
-                <h6>Stock Quantity</h6>
-                <h2>{{ total_stock }}</h2>
+        <div class="col-6">
+            <div class="card p-3 shadow-sm">
+                <h6 class="small">Stock</h6>
+                <h2 class="mb-0">{{ total_stock }}</h2>
             </div>
         </div>
 
@@ -49,55 +47,54 @@
     </div>
 
 
-    <hr class="my-4">
+    <hr>
 
 
-    <!-- Low Stock Section -->
-
-    <h3 class="mt-4">
+    <h4 class="mb-3">
         Low Stock Alert
-    </h3>
+    </h4>
 
 
-    <div class="table-responsive">
+    <div class="card shadow-sm">
 
-        <table class="table table-striped">
+        <div class="table-responsive">
 
-            <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>SKU</th>
-                    <th>Quantity</th>
-                </tr>
-            </thead>
+            <table class="table table-sm mb-0">
 
-
-            <tbody>
-
-            {% for product in low_stock_products %}
-
-                <tr>
-                    <td>{{ product.name }}</td>
-                    <td>{{ product.sku }}</td>
-                    <td>{{ product.quantity }}</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>SKU</th>
+                        <th>Qty</th>
+                    </tr>
+                </thead>
 
 
-            {% empty %}
+                <tbody>
 
-                <tr>
-                    <td colspan="3" class="text-center">
-                        No low stock products
-                    </td>
-                </tr>
+                {% for product in low_stock_products %}
 
+                    <tr>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.sku }}</td>
+                        <td>{{ product.quantity }}</td>
+                    </tr>
 
-            {% endfor %}
+                {% empty %}
 
+                    <tr>
+                        <td colspan="3" class="text-center">
+                            No low stock products
+                        </td>
+                    </tr>
 
-            </tbody>
+                {% endfor %}
 
-        </table>
+                </tbody>
+
+            </table>
+
+        </div>
 
     </div>
 
@@ -106,4 +103,3 @@
 
 
 {% endblock %}
-```
