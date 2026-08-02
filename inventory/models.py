@@ -16,6 +16,7 @@ class Brand(models.Model):
 
 
 class Product(models.Model):
+    sku = models.CharField(max_length=50, unique=True, default="TEMP-SKU")
     name = models.CharField(max_length=100)
 
     category = models.ForeignKey(
@@ -28,8 +29,8 @@ class Product(models.Model):
         on_delete=models.CASCADE
     )
 
-    size = models.CharField(max_length=20)
-    color = models.CharField(max_length=50)
+    size = models.CharField(max_length=20, default="")
+    color = models.CharField(max_length=50, default="")
 
     purchase_price = models.DecimalField(
         max_digits=10,
@@ -44,9 +45,10 @@ class Product(models.Model):
     quantity = models.IntegerField()
 
     barcode = models.CharField(
-        max_length=100,
-        unique=True
-    )
+    max_length=100,
+    unique=True,
+    default="TEMP-BARCODE"
+)
 
     created_date = models.DateTimeField(
         auto_now_add=True

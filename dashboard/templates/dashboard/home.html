@@ -1,0 +1,61 @@
+{% extends "dashboard/base.html" %}
+
+{% block content %}
+
+<h2 class="mb-4">
+    Dashboard
+</h2>
+
+<div class="row">
+
+    <div class="col-md-3">
+
+        <div class="card p-3">
+
+            <h6>Total Products</h6>
+
+            <h2>{{ total_products }}</h2>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card p-3">
+
+            <h6>Today's Sales</h6>
+
+            <h2>৳0</h2>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card p-3">
+
+            <h6>Suppliers</h6>
+
+            <h2>0</h2>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card p-3">
+
+            <h6>Low Stock</h6>
+
+            <h2>0</h2>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
