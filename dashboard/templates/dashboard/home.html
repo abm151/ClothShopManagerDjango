@@ -9,53 +9,74 @@
 <div class="row">
 
     <div class="col-md-3">
-
         <div class="card p-3">
-
             <h6>Total Products</h6>
-
             <h2>{{ total_products }}</h2>
-
         </div>
-
     </div>
 
+
     <div class="col-md-3">
-
         <div class="card p-3">
-
-            <h6>Today's Sales</h6>
-
-            <h2>৳0</h2>
-
+            <h6>Total Brands</h6>
+            <h2>{{ total_brands }}</h2>
         </div>
-
     </div>
 
+
     <div class="col-md-3">
-
         <div class="card p-3">
-
-            <h6>Suppliers</h6>
-
-            <h2>0</h2>
-
+            <h6>Total Categories</h6>
+            <h2>{{ total_categories }}</h2>
         </div>
-
     </div>
 
+
     <div class="col-md-3">
-
         <div class="card p-3">
-
-            <h6>Low Stock</h6>
-
-            <h2>0</h2>
-
+            <h6>Stock Quantity</h6>
+            <h2>{{ total_stock }}</h2>
         </div>
-
     </div>
 
 </div>
+
+
+<hr>
+
+
+<h3 class="mt-4">
+    Low Stock Alert
+</h3>
+
+<table class="table">
+
+<tr>
+    <th>Product</th>
+    <th>SKU</th>
+    <th>Quantity</th>
+</tr>
+
+
+{% for product in low_stock_products %}
+
+<tr>
+    <td>{{ product.name }}</td>
+    <td>{{ product.sku }}</td>
+    <td>{{ product.quantity }}</td>
+</tr>
+
+{% empty %}
+
+<tr>
+    <td colspan="3">
+        No low stock products
+    </td>
+</tr>
+
+{% endfor %}
+
+</table>
+
 
 {% endblock %}
